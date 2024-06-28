@@ -26,6 +26,7 @@ router.get("/", async (req, res) => {
   }
 });
 //parametrised 
+//comment added
 router.get("/:tasteType", async (req, res) => {
   try {
     const tasteType = req.params.tasteType;
@@ -90,5 +91,5 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json({ error: "Internal server Error" });
   }
 });
-
+//comments for testing purpose
 module.exports = router;
