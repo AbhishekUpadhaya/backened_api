@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
 const db = require("./db");
-// const MenuItem = require("./models/MenuItem");
+require('dotenv').config();
+const MenuItem = require("./models/MenuItem");
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
@@ -20,6 +21,12 @@ app.use('/menu',menuItemRoutes);
 
 app.use("/person", personRoutes);
 
-app.listen(3000, () => {
-  console.log("server is running ");
+
+
+
+
+const  PORT=process.env.PORT ||3000;
+
+app.listen(PORT, () => {
+  console.log(`server is running on PORT:${PORT} `);
 });
